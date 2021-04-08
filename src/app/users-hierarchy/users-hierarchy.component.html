@@ -5,12 +5,14 @@
         [userInfo]="userInfo"
         [parentId]="parentId"
         class="app-users-info"
+        [userImg]="userImg"
       >
       </app-users-info>
       <app-users-hierarchy
         [parentId]="userInfo.key"
         [usersInfo]="removeCurrentLevelItems(usersInfo, parentId)"
         class="app-users-hierarchy"
+        [level]="1"
       ></app-users-hierarchy>
     </li>
   </ng-container>

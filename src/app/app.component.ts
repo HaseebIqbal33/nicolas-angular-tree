@@ -8,4 +8,6 @@ import * as usersInfo from '../mock/usersInfo.json';
 export class AppComponent {
   title = 'angular-app';
   usersInfo = usersInfo.result.orgUsers;
+
+  ngAfterViewInit(): void {}
 }

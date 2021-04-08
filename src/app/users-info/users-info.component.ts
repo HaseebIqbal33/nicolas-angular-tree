@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-users-info',
@@ -11,7 +11,9 @@ export class UsersInfoComponent implements OnInit {
   @Input()
   parentId!: number;
   @Input()
-  level!: number;
+  userImg!: string;
+  // @Input()
+  // level!: number;
 
   constructor() {}
 

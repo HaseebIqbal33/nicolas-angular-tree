@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-users-hierarchy',
@@ -10,6 +10,9 @@ export class UsersHierarchyComponent implements OnInit {
   parentId!: number;
   @Input()
   usersInfo!: any;
+  @Input()
+  level: number = 1;
+  userImg = `/assets/img/user${this.level}.svg`;
 
   constructor() {}
 
@@ -17,6 +20,12 @@ export class UsersHierarchyComponent implements OnInit {
 
   removeCurrentLevelItems(usersInfo: any, parentId: number) {
     const users = usersInfo.filter((user: any) => user.parent !== parentId);
+    if (users.length) {
+      this.level += 1;
+      `/assets/img/user${this.level}.svg`;
+    }
+
+    console.log(this.userImg);
     return users;
   }
 }
